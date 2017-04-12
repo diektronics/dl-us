@@ -72,7 +72,9 @@ func (d *Db) UpdateMyShows(shows []*show.Show) error {
 	}
 	defer db.Close()
 	var lastErr error
-	sort.Sort(show.ByAlpha(shows))
+	sort.Slice(shows, func(i, j int) bool {
+		return shows[i].Name < shows[j].Name || shows[i].Name == shows[j].Name && shows[i].Eps < shows[j].Eps
+	})
 	for _, s := range shows {
 		dbQuery := fmt.Sprintf("UPDATE series SET latest_ep=%q WHERE name=%q", s.Eps, s.Name)
 		_, err = db.Exec(dbQuery)

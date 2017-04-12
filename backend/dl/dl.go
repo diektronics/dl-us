@@ -67,11 +67,11 @@ func sanitizeHooks(down *dlpb.Down) error {
 	}
 	hooks := down.Posthook
 	for _, h := range hooks {
-		if _, err := hook.Order(h); err != nil {
+		if err := hook.Validate(h); err != nil {
 			return err
 		}
 	}
-	sort.Sort(hook.ByOrder(hooks))
+	sort.Slice(hooks, func(i, j int) bool { return hook.Order(hooks[i]) < hook.Order(hooks[j]) })
 	down.Posthook = hooks
 	return nil
 }

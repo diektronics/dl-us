@@ -36,20 +36,16 @@ func Names() []string { return names }
 
 func All() map[string]*Hook { return all }
 
-func Order(h string) (int, error) {
-	if i, ok := order[h]; ok {
-		return i, nil
+func Order(h string) int { return order[h] }
+
+func Validate(h string) error {
+	if _, ok := order[h]; ok {
+		return nil
 	} else {
-		return i, fmt.Errorf("%v is not a valid hook", h)
+		return fmt.Errorf("%v is not a valid hook", h)
 	}
 }
 
 func (h *Hook) Name() string { return h.name }
 
 func (h *Hook) Channel() chan *Data { return h.ch }
-
-type ByOrder []string
-
-func (o ByOrder) Len() int           { return len(o) }
-func (o ByOrder) Swap(i, j int)      { o[i], o[j] = o[j], o[i] }
-func (o ByOrder) Less(i, j int) bool { return order[o[i]] < order[o[j]] }
