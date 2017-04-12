@@ -5,11 +5,11 @@ import (
 	"log"
 	"sort"
 
-	"diektronics.com/carter/dl/backend/db"
-	"diektronics.com/carter/dl/backend/hook"
-	"diektronics.com/carter/dl/backend/notifier"
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/backend/db"
+	"github.com/diektronics/dl-us/backend/hook"
+	"github.com/diektronics/dl-us/backend/notifier"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 )
 
 // Downloader exports five functions that are made available through an RPC interface

@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
 	_ "github.com/Go-SQL-Driver/MySQL"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 	"github.com/golang/protobuf/proto"
 )
 

@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"time"
 
-	"diektronics.com/carter/dl/backend/dl"
-	"diektronics.com/carter/dl/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/backend/dl"
+	"github.com/diektronics/dl-us/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 	"google.golang.org/grpc"
 )
 

@@ -4,8 +4,8 @@ import (
 	"log"
 	"path/filepath"
 
-	"diektronics.com/carter/dl/backend/hook"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/backend/hook"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 	"golang.org/x/net/context"
 )
 

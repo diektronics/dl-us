@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"diektronics.com/carter/dl/cfg"
-	"diektronics.com/carter/dl/frontend/web/server"
+	"github.com/diektronics/dl-us/cfg"
+	"github.com/diektronics/dl-us/frontend/web/server"
 )
 
 var cfgFile = flag.String(

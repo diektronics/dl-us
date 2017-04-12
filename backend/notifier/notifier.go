@@ -7,8 +7,8 @@ import (
 	"net/smtp"
 	"strings"
 
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 )
 
 type Client struct {

@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"time"
 
-	"diektronics.com/carter/dl/frontend/tvd/db"
-	"diektronics.com/carter/dl/frontend/tvd/feed"
-	"diektronics.com/carter/dl/frontend/tvd/show"
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/frontend/tvd/db"
+	"github.com/diektronics/dl-us/frontend/tvd/feed"
+	"github.com/diektronics/dl-us/frontend/tvd/show"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 	"github.com/gorilla/mux"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -19,7 +19,7 @@ import (
 const (
 	downPrefix    = "/down"
 	hookPrefix    = "/hook"
-	staticContent = "src/diektronics.com/carter/dl/frontend/web/server/static"
+	staticContent = "src/github.com/diektronics/dl-us/frontend/web/server/static"
 )
 
 type Server struct {

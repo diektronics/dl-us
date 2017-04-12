@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
-	"diektronics.com/carter/dl/backend/hook"
-	"diektronics.com/carter/dl/protos/cfg"
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	"github.com/diektronics/dl-us/backend/hook"
+	"github.com/diektronics/dl-us/protos/cfg"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 )
 
 func (d *Downloader) download(down *dlpb.Down) {
@@ -120,16 +120,16 @@ func (d *Downloader) worker(i int, c *cfg.Config) {
 		var fileSize int64 = 0
 		for len(parts) > 1 {
 			fileSize, err = strconv.ParseInt(parts[len(parts)-1], 10, 64)
-                        if err == nil && fileSize != 0 {
-				break;
+			if err == nil && fileSize != 0 {
+				break
 			}
 			parts = parts[:len(parts)-1]
 		}
 		if len(parts) < 2 {
 			log.Println("download:", i, "err: bad probe output:", string(output))
 			l.l.Status = dlpb.Status_ERROR
-                        l.ch <- l.l
-                        continue
+			l.ch <- l.l
+			continue
 		}
 		fileName := filepath.Join(l.destination, strings.Join(parts[:len(parts)-1], " "))
 		done := make(chan struct{})

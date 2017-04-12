@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"strings"
 
-	cfgpb "diektronics.com/carter/dl/protos/cfg"
+	cfgpb "github.com/diektronics/dl-us/protos/cfg"
 	"github.com/golang/protobuf/proto"
 )
 

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sort"
 
-	"diektronics.com/carter/dl/frontend/tvd/show"
-	"diektronics.com/carter/dl/protos/cfg"
+	"github.com/diektronics/dl-us/frontend/tvd/show"
+	"github.com/diektronics/dl-us/protos/cfg"
 
 	_ "github.com/Go-SQL-Driver/MySQL"
 )

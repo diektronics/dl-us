@@ -1,7 +1,7 @@
 package show
 
 import (
-	dlpb "diektronics.com/carter/dl/protos/dl"
+	dlpb "github.com/diektronics/dl-us/protos/dl"
 )
 
 type Show struct {

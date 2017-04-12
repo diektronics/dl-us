@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"diektronics.com/carter/dl/frontend/tvd/show"
+	"github.com/diektronics/dl-us/frontend/tvd/show"
 )
 
 type data struct {
