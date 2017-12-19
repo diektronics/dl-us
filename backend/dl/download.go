@@ -142,7 +142,14 @@ func (d *Downloader) worker(i int, c *cfg.Config) {
 			"--printf=%F",
 			"--temp-rename",
 			l.l.Url}
-		output, err = exec.Command(cmd[0], cmd[1:]...).CombinedOutput()
+		const retries = 2
+		for i := 0; i < retries; i++ {
+			output, err = exec.Command(cmd[0], cmd[1:]...).CombinedOutput()
+			if err == nil {
+				continue
+			}
+			log.Println("download:", i, "failed, retrying")
+		}
 		// Sync with sizeMonitor() goroutine.
 		close(done)
 		<-monitorDone

@@ -35,7 +35,7 @@ func Link(linkRegexp string, show *show.Show) string {
 		reStr := "(?i)(?P<link>" + linkRegexp + titleEp + ")"
 		ret, err := match(reStr, show.Blob)
 		if err == nil {
-			return ret["link"]
+			return strings.Replace(ret["link"], "http:", "https:", 1)
 		}
 	}
 	return ""
